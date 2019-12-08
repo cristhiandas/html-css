@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+    "compile:sass": "node-sass sass/main.scss css/style.css -w",
+    "test:live-sass": "concurrently --kill-others \"node-sass sass/main.scss css/style.css -w\" \"live-server\""
   },
   "author": "Cristhian Da Silva",
   "license": "ISC",
   "devDependencies": {
+    "concurrently": "^5.0.0",
     "node-sass": "^4.13.0"
   }
 }
