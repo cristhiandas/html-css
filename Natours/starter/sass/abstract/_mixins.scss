@@ -1,9 +1,5 @@
 @mixin clearfix {
-    &::after{
-        content: "";
-        display: table;
-        clear: both;
-    }
+    display: flow-root;
 }
 
 @mixin absoluteCenter {
@@ -11,4 +7,30 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+/* 
+MEDIA QUERY MANAGER
+
+Break points
+0-600px phone
+600-900px tablet-portrait
+900-1200px tablet-landscape
+1200-1800px desktop [normal styles]
++1800px big-desktop
+*/
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em) { @content };
+    }
+    @if $breakpoint == tablet-portrait {
+        @media (max-width: 56.25em) { @content };
+    }
+    @if $breakpoint == tablet-landscape {
+        @media (max-width: 75em) { @content };
+    }
+    @if $breakpoint == big-desktop {
+        @media (min-width: 112.5em) { @content };
+    }
 }
