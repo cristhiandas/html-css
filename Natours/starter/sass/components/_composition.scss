@@ -7,24 +7,49 @@
         border-radius: .2rem;
         position: absolute;
         transition: all .2s;
-        outline-offset: 2rem; 
+        outline-offset: 2rem;
+
+        @include respond(tablet-portrait) {
+            float: left;
+            position: relative;
+            width: 33.3333333%;
+            box-shadow: 0 1.5rem 3rem rgba($black-color, .2);
+        }
 
         &--p1 {
             left: 0;
             top: -2rem;
             z-index: 10;
+
+            @include respond(tablet-portrait) {
+                top: 1rem;
+                transform: scale(1.1);
+            }
+            
         }
 
         &--p2 {
             right: 0;
             top: 2rem;
             z-index: 14;
+
+            @include respond(tablet-portrait) {
+                top: -1rem;
+                transform: scale(1.3);
+            }
         }
 
         &--p3 {
             left: 20%;
             top: 10rem;
             z-index: 18;
+
+            @include respond(tablet-portrait) {
+                left: 0;
+                top: 1rem;
+                transform: scale(1.1);
+                z-index: 11;
+            }
         }
 
         &:hover {
