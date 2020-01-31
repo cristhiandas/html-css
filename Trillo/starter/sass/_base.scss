@@ -18,6 +18,12 @@
     --grey-border-bottom-1: 1px solid var(--light-grey-2);
 }
 
+$break-point: 75em; //1200px
+$break-point-2: 68.74em;  //1100px
+$break-point-3: 56.25em; //900px
+$break-point-4: 37.5em; //600px
+$break-point-5: 31.25em; //600px
+
 * {
     margin: 0;
     padding: 0;
@@ -32,6 +38,10 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%;
+
+    @media only screen and (max-width: $break-point-2){
+        font-size: 50%;
+    }
 }
 
 body {
